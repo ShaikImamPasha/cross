@@ -19,9 +19,6 @@ app.use((req, res, next) => {
 app.use('/api/proxy/swiggy/dapi', createProxyMiddleware({
   target: 'https://www.swiggy.com',
   changeOrigin: true,
-  pathRewrite: {
-    '^/api/proxy/swiggy': '/dapi',
-  },
 }));
 
 app.listen(PORT, () => {
