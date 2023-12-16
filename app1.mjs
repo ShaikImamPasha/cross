@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 // Define the Swiggy API proxy route
-app.use('/api/proxy/swiggy', createProxyMiddleware({
+app.use('/api/proxy/swiggy/dapi/', createProxyMiddleware({
   target: 'https://www.swiggy.com',
   changeOrigin: true,
   pathRewrite: {
