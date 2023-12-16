@@ -16,9 +16,12 @@ app.use((req, res, next) => {
 });
 
 // Define the Swiggy API proxy route
-app.use('/api/proxy/swiggy/dapi', createProxyMiddleware({
+app.use('/api/proxy/swiggy', createProxyMiddleware({
   target: 'https://www.swiggy.com',
   changeOrigin: true,
+  pathRewrite: {
+    '^/api/proxy/swiggy': '/dapi',
+  },
 }));
 
 app.listen(PORT, () => {
