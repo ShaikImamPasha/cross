@@ -50,9 +50,12 @@ const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://kind-puce-bull-tie.cyclic.app",
-    methods: ["GET", "POST"]
-  }
+    origin: "https://commentes-ay1d.vercel.app/",
+    methods: ["GET", "POST"],
+    transports: ['websocket', 'polling'],
+    credentials: true
+},
+allowEIO3: true
 });
 
 // Socket.IO connection event on the '/socket' namespace
