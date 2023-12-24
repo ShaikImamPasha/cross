@@ -48,7 +48,12 @@ const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 // Create an HTTP server and integrate socket.io
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:1234/",
+    methods: ["GET", "POST"]
+  }
+});
 
 // Socket.IO connection event on the '/socket' namespace
 const socketIoNamespace = io.of('/socket');
