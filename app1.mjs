@@ -50,7 +50,7 @@ const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:1234/",
+    origin: "https://kind-puce-bull-tie.cyclic.app",
     methods: ["GET", "POST"]
   }
 });
