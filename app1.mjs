@@ -3,7 +3,6 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import http from 'http';
-import { Server } from 'socket.io';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config()
