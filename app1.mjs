@@ -34,6 +34,6 @@ app.use('/api/proxy/swiggy/dapi', createProxyMiddleware({
   },
 }));
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log('Server is running on port', PORT);
 });
